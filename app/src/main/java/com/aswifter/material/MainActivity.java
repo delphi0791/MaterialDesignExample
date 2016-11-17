@@ -1,5 +1,10 @@
 package com.aswifter.material;
 
+import com.aswifter.material.book.BooksFragment;
+import com.aswifter.material.widget.BackHandledFragment;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -12,9 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.aswifter.material.book.BooksFragment;
-import com.aswifter.material.widget.BackHandledFragment;
-
 public class MainActivity extends AppCompatActivity implements BackHandledFragment.BackHandlerInterface {
 
     private DrawerLayout mDrawerLayout;
@@ -24,6 +26,10 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
     private NavigationView mNavigationView;
 
     private static final int ANIM_DURATION_TOOLBAR = 300;
+
+    public static void start(Activity activity) {
+        activity.startActivity(new Intent(activity, MainActivity.class));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
